@@ -1,0 +1,43 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{site.url}}">
+
+ <title>Joshua Poehls</title>
+ <link href="{{site.url}}/atom.xml" rel="self"/>
+ <link href="{{site.url}}"/>
+ <updated>{{ formatDate(site.time) }}</updated>
+ <id>{{site.url}}</id>
+ <author>
+   <name>Joshua Poehls</name>
+   <email>joshua@zduck.com</email>
+ </author>
+
+ <%
+    for (var i=0; i<Math.min(site.posts.length, 10); i++) {
+        var post = site.posts[i];
+    %>
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="{{site.url}}{{ post.url }}"/>
+   <author>
+     <name>Joshua Poehls</name>
+   </author>
+     <%
+     if (post.categories) {
+     for (var j=0; j<post.categories.length; j++) {
+     var category = post.categories[j];
+     %>
+     <category term="{{ category }}" />
+     <% } } %>
+   <updated>{{ formatDate(post.date) }}</updated>
+   <id>{{site.url}}{{ post.url }}</id>
+   <content type="html">{{ post.content }}</content>
+    <rights type="html">
+      &amp;copy; {{ formatDate(post.date, 'YYYY') }} Joshua Poehls
+    </rights>
+ </entry>
+ <% } %>
+
+</feed>

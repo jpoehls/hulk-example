@@ -1,0 +1,16 @@
+destination: _site
+
+# Only applies to posts (pages w/ dates)
+# year, title are available
+permalink: "/{{year}}/{{title}}"
+
+ignore:
+  - .idea/**
+  - gen
+  - gen2
+  - .DS_Store
+
+url: http://zduck.com/
+
+global:
+  name: Example Blog

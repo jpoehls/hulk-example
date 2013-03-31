@@ -1,0 +1,3 @@
+#!/bin/sh
+
+DEBUG=* node ../hulk-cli/index $@

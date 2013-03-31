@@ -1,0 +1,29 @@
+---
+published: true
+---
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <%
+    for (var i=0; i<site.pages.length; i++) {
+    var page = site.pages[i];
+
+    if (/\.(xml|txt)$/i.test(page.url)) {
+        continue;
+    }
+    %>
+    <url>
+        <loc>{{{site.url}}}{{{page.url}}}</loc>
+        <lastmod>{{formatDate(site.time)}}</lastmod>
+    </url>
+    <% } %>
+
+    <%
+    for (var i=0; i<site.posts.length; i++) {
+    var post = site.posts[i];
+    %>
+    <url>
+        <loc>{{{site.url}}}{{{post.url}}}</loc>
+        <lastmod>{{formatDate(site.time)}}</lastmod>
+    </url>
+    <% } %>
+</urlset>

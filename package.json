@@ -1,0 +1,15 @@
+{
+  "name": "hulk-example",
+  "version": "0.0.1",
+  "description": "Example blog site for Hulk.",
+  "isPrivate": true,
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jpoehls/hulk-example.git"
+  },
+  "author": "Joshua Poehls <joshua@zduck.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hulk": "*"
+  }
+}
