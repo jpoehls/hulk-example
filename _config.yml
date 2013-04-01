@@ -1,14 +1,15 @@
 destination: _site
 
-# Only applies to posts (pages w/ dates)
-# year, title are available
+# Only applies to posts
+# year, month, day, and title variables are available
 permalink: "/{{year}}/{{title}}"
 
 ignore:
   - .idea/**
   - gen
-  - gen2
   - .DS_Store
+  - LICENSE
+  - README.md
 
 url: http://zduck.com/
 
